@@ -3,25 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nauka GUI - Układ Przycisków</title>
+    <title>Moja Gra Idle - Pełny Układ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="shop-container">
-    <div class="upgrade-text">Auto-Clicker (1 CPS) <br><span>Cost: 50$</span></div>
-    <button class="buy-btn">BUY</button>
+<div id="main-game-layout">
+    <div id="content-area">
+        <div id="sub-menu-stats" class="sub-menu-bar">
+            <button class="sub-btn active-sub" onclick="changeSubTab('stats', 'stats')">Buttons</button>
+            <button class="sub-btn" onclick="changeSubTab('stats', 'upgrades')">Upgrades</button>
+        </div>
+        <div id="sub-menu-research" class="sub-menu-bar" style="display: none;">
+            <button class="sub-btn" onclick="changeSubTab('research', 'researchers')">Researchers</button>
+            <button class="sub-btn" onclick="changeSubTab('research', 'research')">Research</button>
+            <button class="sub-btn" onclick="changeSubTab('research', 'automation')">Automation</button>
+        </div>
+        <div id="sub-menu-settings" class="sub-menu-bar" style="display: none;">
+            <button class="sub-btn" onclick="changeSubTab('settings', 'settings')">Settings</button>
+            <button class="sub-btn" onclick="changeSubTab('settings', 'stats-info')">Stats Info</button>
+        </div>
+        <div id="game-play-space">
 
-    <div class="upgrade-text">Super Clicks (+5/click) <br><span>Cost: 150$</span></div>
-    <button class="buy-btn">BUY</button>
+            <h1 id="current-menu-title">STATS: STATS</h1>
 
-    <div class="upgrade-text">Gold Multiplication (x2) <br><span>Cost: 500$</span></div>
-    <button class="buy-btn">BUY</button>
+            <div id="panel-stats" class="game-panel">
 
-    <div class="upgrade-text">Robotic Labor (50 CPS) <br><span>Cost: 2,500$</span></div>
-    <button class="buy-btn">BUY</button>
+                <div id="sub-panel-stats-stats" class="sub-game-panel">
+                    <p>Statystyki Twojego profilu:</p>
+                    <div>Money: 1e40$</div>
+                    <div>Multiplier: 1e20 M</div>
+                </div>
 
-    <div class="upgrade-text">Quantum Computer (999 CPS) <br><span>Cost: 99,999$</span></div>
-    <button class="buy-btn">BUY</button>
+                <div id="sub-panel-stats-upgrades" class="sub-game-panel" style="display: none;">
+                    <p>Kup ulepszenia za gotówkę:</p>
+                    <div id="uklad-upgrade">
+                        <button class="UP red">Upgrade1</button>
+                        <button class="UP red">Upgrade2</button>
+                        <button class="UP blue">Upgrade4</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="panel-research" class="game-panel" style="display: none;">
+
+                <div id="sub-panel-research-researchers" class="sub-game-panel" style="display: none;">
+                    <p>Zatrudnij naukowców (Researchers):</p>
+                    <button class="UP blue">Kup Naukowca (100 M)</button>
+                </div>
+
+                <div id="sub-panel-research-research" class="sub-game-panel" style="display: none;">
+                    <p>Właściwe drzewko badań (Research):</p>
+                    <button class="UP lBlue">Odblokuj Atom</button>
+                </div>
+
+                <div id="sub-panel-research-automation" class="sub-game-panel" style="display: none;">
+                    <p>Automatyzacja Twojej fabryki (Automation):</p>
+                    <button class="UP gray">Auto-Rebirth ON</button>
+                </div>
+
+            </div>
+
+            <div id="panel-settings" class="game-panel" style="display: none;">
+
+                <div id="sub-panel-settings-settings" class="sub-game-panel" style="display: none;">
+                    <p>Opcje gry (Settings):</p>
+                    <button class="UP gray">Zapisz Grę (Save)</button>
+                    <button class="UP red">Resetuj Postęp</button>
+                </div>
+
+                <div id="sub-panel-settings-stats-info" class="sub-game-panel" style="display: none;">
+                    <p>Dodatkowe informacje techniczne (Stats Info):</p>
+                    <div>Wersja gry: v0.4.2</div>
+                    <div>FPS: 60</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="side-menu">
+        <button class="side-btn active-main" onclick="changeMainTab('stats')">Stats</button>
+        <button class="side-btn" onclick="changeMainTab('research')">Research</button>
+        <button class="side-btn" onclick="changeMainTab('settings')">Settings</button>
+    </div>
 </div>
+<script src="script.js"></script>
 </body>
 </html>
