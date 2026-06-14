@@ -59,6 +59,21 @@ function formatujLiczbe(n) {
 function round(liczba) {
     return Math.round(liczba * 100) / 100;
 }
+//=====(KUPOWANIE PODCZAS TRZYMANIA)=====
+let multiplierInterval = null;
+function startAutoBuyMultiplier() {
+    if (multiplierInterval !== null) return;
+    buyMultiplier();
+    multiplierInterval = setInterval(function() {
+        buyMultiplier();
+    }, 140);
+}
+function stopAutoBuyMultiplier() {
+    if (multiplierInterval !== null) {
+        clearInterval(multiplierInterval);
+        multiplierInterval = null;
+    }
+}
 //=====(FUNKCJE PRZYCISKÓW)=====
 function buyMultiplier() {
     if (money >= 100) {

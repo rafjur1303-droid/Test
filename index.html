@@ -28,8 +28,12 @@
                 <div id="sub-panel-stats-stats" class="sub-game-panel">
                     <h1 id = "money_amount">Money: 0</h1>
                     <div id = "stats-container">
-                        <button id = "btn-multiplier" class = "button" onclick="buyMultiplier()">Cost: 100$ <br>
-                            Gain: <span id = "multiplier_gain">0</span> M</button>
+                        <button id="btn-multiplier" class="button"
+                                onmousedown="startAutoBuyMultiplier()"
+                                onmouseup="stopAutoBuyMultiplier()"
+                                onmouseleave="stopAutoBuyMultiplier()">
+                            Cost: 100$ <br> Gain: <span id="multiplier_gain">0</span> M
+                        </button>
                         <h1 id = "multiplier_amount">Multiplier: 1</h1>
                         <button id = "btn-rebirth" class = "button" onclick="buyRebirth()">Reset: M , $<br>
                             Gain: <span id="rebirth_gain">0</span> R</button>
