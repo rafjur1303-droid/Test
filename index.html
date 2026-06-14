@@ -6,6 +6,7 @@
     <title>Moja Gra Idle - Pełny Układ</title>
     <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="buttons.css">
+    <link rel="stylesheet" href="upgrades.css">
 </head>
 <body>
 <div id="main-game-layout">
@@ -28,7 +29,7 @@
                 <div id="sub-panel-stats-stats" class="sub-game-panel">
                     <h1 id = "money_amount">Money: 0</h1>
                     <div id = "stats-container">
-                        <button id="btn-multiplier" class="button"
+                        <button id="btn-multiplier" class="button red"
                                 onmousedown="startAutoBuyMultiplier()"
                                 onmouseup="stopAutoBuyMultiplier()"
                                 onmouseleave="stopAutoBuyMultiplier()"
@@ -38,20 +39,77 @@
                             Cost: 100$ <br> Gain: <span id="multiplier_gain">0</span> M
                         </button>
                         <h1 id = "multiplier_amount">Multiplier: 1</h1>
-                        <button id = "btn-rebirth" class = "button" onclick="buyRebirth()">Reset: M , $<br>
+                        <button id = "btn-rebirth" class = "button blue" onclick="buyRebirth()">Reset: M , $<br>
                             Gain: <span id="rebirth_gain">0</span> R</button>
                         <h1 id = "rebirth_amount">Rebirth: 1</h1>
-                        <button id = "btn-superRebirth" class = "button" onclick="buySuperRebirth()">Reset: R , M , $<br>
+                        <button id = "btn-superRebirth" class = "button lblue" onclick="buySuperRebirth()">Reset: R , M , $<br>
                             Gain: <span id="superRebirth_gain">0</span> SR</button>
                         <h1 id = "superRebirth_amount">Super Rebirth: 1</h1>
                     </div>
                 </div>
                 <div id="sub-panel-stats-upgrades" class="sub-game-panel" style="display: none;">
-                    <p>Kup ulepszenia za gotówkę:</p>
-                    <div id="uklad-upgrade">
-                        <button class="UP red">Upgrade1</button>
-                        <button class="UP red">Upgrade2</button>
-                        <button class="UP blue">Upgrade4</button>
+                    <div id = "upgrades-container">
+                        <div class = "upgrade-max green" id="btn-Up-1" onclick="Upgrade1()">
+                            <div class="upgrade-info">
+                                $ x1.1<br>
+                                (x<span id = "up1_boost"></span>)<br>
+                                Cost: <span id="up1_cost"></span> $<br>
+                                <span id="up1_count"></span>/<span id = "up1_cap"></span>
+                            </div>
+                            <button id = "upgrade1-max" class ="Max green" onclick="Upgrade1Max(event)">Max</button>
+                        </div>
+                        <button class = "upgrade green" id = "btn-Up-2" onclick = "Upgrade2()">$ boost M<br>
+                            (x<span id = "up2_boost"></span>)<br>
+                            Cost: 250k $<br>
+                            <span id = "up2_count"></span>/1</button>
+                        <div class = "upgrade-max red" id="btn-Up-3" onclick="Upgrade3()">
+                            <div class="upgrade-info">
+                                M x1.15<br>
+                                (x<span id = "up3_boost"></span>)<br>
+                                Cost: <span id="up3_cost"></span> M<br>
+                                <span id="up3_count"></span>/<span id = "up3_cap"></span>
+                            </div>
+                            <button  id = "upgrade3-max" class ="Max red" onclick="Upgrade3Max(event)">Max</button>
+                        </div>
+                        <button class = "upgrade red" id = "btn-Up-4" onclick = "Upgrade4()">PlayTime boost R<br>
+                            (x<span id = "up4_boost"></span>)<br>
+                            Cost: 4k M<br>
+                            <span id = "up4_count"></span>/1</button>
+                        <button class = "upgrade blue" id = "btn-Up-5" onclick = "Upgrade5()">R boost R<br>
+                            (x<span id = "up5_boost"></span>)<br>
+                            Cost: 20 R<br>
+                            <span id = "up5_count"></span>/1</button>
+                        <div class = "upgrade-max blue" id="btn-Up-6" onclick="Upgrade6()">
+                            <div class="upgrade-info">
+                                SR x1.05<br>
+                                (x<span id = "up6_boost"></span>)<br>
+                                Cost: <span id="up6_cost"></span> R<br>
+                                <span id="up6_count"></span>/<span id = "up6_cap"></span>
+                            </div>
+                            <button id = "upgrade6-max" class ="Max blue" onclick="Upgrade6Max(event)">Max</button>
+                        </div>
+                        <div class = "upgrade-max lblue" id="btn-Up-7" onclick="Upgrade7()">
+                            <div class="upgrade-info">
+                                All stats x1.2<br>
+                                (x<span id = "up7_boost"></span>)<br>
+                                Cost: <span id="up7_cost"></span> SR<br>
+                                <span id="up7_count"></span>/5
+                            </div>
+                            <button id = "upgrade7-max" class ="Max lblue" onclick="Upgrade7Max(event)">Max</button>
+                        </div>
+                        <button class = "upgrade lblue" id = "btn-Up-8" onclick = "Upgrade8()">Up. count boost SR<br>
+                            (x<span id = "up8_boost"></span>)<br>
+                            Cost: 25 SR<br>
+                            <span id = "up8_count"></span>/1</button>
+                        <button class = "upgrade lblue" id = "btn-Up-9" onclick = "Upgrade9()">Unlock Research<br>
+                            Cost: 125 SR<br>
+                            <span id = "up9_count"></span>/1</button>
+                    </div>
+                    <div id = "stats-upg">
+                        <h1 id = "money-upg">Money: 0</h1>
+                        <h1 id = "multiplier-upg">Multiplier: 0</h1>
+                        <h1 id = "rebirth-upg">Rebirth: 0</h1>
+                        <h1 id = "superRebirth-upg">SuperRebirth: 0</h1>
                     </div>
                 </div>
 
@@ -81,7 +139,7 @@
                 <div id="sub-panel-settings-settings" class="sub-game-panel" style="display: none;">
                     <p>Opcje gry (Settings):</p>
                     <button class="UP gray">Zapisz Grę (Save)</button>
-                    <button class="UP red">Resetuj Postęp</button>
+                    <button onclick="resetGame()">Resetuj Postęp</button>
                 </div>
 
                 <div id="sub-panel-settings-stats-info" class="sub-game-panel" style="display: none;">
@@ -100,6 +158,7 @@
 </div>
 <script src="zmienne.js"></script>
 <script src="funkcje.js"></script>
+<script src="upgrades.js"></script>
 <script src="updateUI.js"></script>
 </body>
 </html>

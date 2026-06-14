@@ -90,3 +90,6 @@ body {
     border-radius: 0.5vw;
     padding: 1vw;
 }
+.btn-locked {
+    filter: grayscale(65%);
+}

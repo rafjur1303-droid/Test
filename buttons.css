@@ -30,31 +30,41 @@
 .button:active {
     transform: scale(0.95);
 }
-#btn-multiplier {
+.red {
     background-color: #ff2a2a;
-    border-color: #880000;
+    border: 0.3vw solid #880000;
 }
 @media (hover: hover) {
-    #btn-multiplier:hover {
+    .red:hover {
         background-color: #ff5151;
     }
 }
-#btn-rebirth {
+.blue {
     background-color: #0066ff;
-    border-color: #0033aa;
+    border: 0.3vw solid #0033aa;
 }
 @media (hover: hover) {
-    #btn-rebirth:hover {
+    .blue:hover {
         background-color: #3385ff;
     }
 }
-#btn-superRebirth {
+.lblue {
     background-color: #00ccff;
-    border-color: #0088cc;
+    border: 0.3vw solid #0088cc;
 }
 @media (hover: hover) {
-    #btn-superRebirth:hover {
+    .lblue:hover {
         background-color: #33ddff;
+    }
+}
+.green {
+    background-color: #49bb00;
+    border: 0.3vw solid #2c7500;
+
+}
+@media (hover: hover) {
+    .green:hover {
+        background-color: #5ae101;
     }
 }
 #money_amount {
