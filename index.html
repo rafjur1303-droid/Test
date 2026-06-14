@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moja Gra Idle - Pełny Układ</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="buttons.css">
 </head>
 <body>
 <div id="main-game-layout">
@@ -23,17 +24,21 @@
             <button class="sub-btn" onclick="changeSubTab('settings', 'stats-info')">Stats Info</button>
         </div>
         <div id="game-play-space">
-
-            <h1 id="current-menu-title">STATS: STATS</h1>
-
             <div id="panel-stats" class="game-panel">
-
                 <div id="sub-panel-stats-stats" class="sub-game-panel">
-                    <p>Statystyki Twojego profilu:</p>
-                    <div>Money: 1e40$</div>
-                    <div>Multiplier: 1e20 M</div>
+                    <h1 id = "money_amount">Money: 0</h1>
+                    <div id = "stats-container">
+                        <button id = "btn-multiplier" class = "button" onclick="buyMultiplier()">Cost: 100$ <br>
+                            Gain: <span id = "multiplier_gain">0</span> M</button>
+                        <h1 id = "multiplier_amount">Multiplier: 1</h1>
+                        <button id = "btn-rebirth" class = "button" onclick="buyRebirth()">Reset: M , $<br>
+                            Gain: <span id="rebirth_gain">0</span> R</button>
+                        <h1 id = "rebirth_amount">Rebirth: 1</h1>
+                        <button id = "btn-superRebirth" class = "button" onclick="buySuperRebirth()">Reset: R , M , $<br>
+                            Gain: <span id="superRebirth_gain">0</span> SR</button>
+                        <h1 id = "superRebirth_amount">Super Rebirth: 1</h1>
+                    </div>
                 </div>
-
                 <div id="sub-panel-stats-upgrades" class="sub-game-panel" style="display: none;">
                     <p>Kup ulepszenia za gotówkę:</p>
                     <div id="uklad-upgrade">
@@ -86,6 +91,8 @@
         <button class="side-btn" onclick="changeMainTab('settings')">Settings</button>
     </div>
 </div>
-<script src="script.js"></script>
+<script src="zmienne.js"></script>
+<script src="funkcje.js"></script>
+<script src="updateUI.js"></script>
 </body>
 </html>
