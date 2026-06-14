@@ -61,10 +61,11 @@ body {
     justify-content: center;
 }
 @media (hover: hover) {
-    .side-btn:hover, .sub-btn:hover:hover {
+    .side-btn:hover, .sub-btn:hover {
         transform: scale(1.05);
     }
 }
+
 .side-btn:active, .sub-btn:active {
     background-color: #555;
     border-color: #3c3c3c;
