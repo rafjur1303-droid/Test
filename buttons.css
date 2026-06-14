@@ -22,8 +22,10 @@
     background-color: #777777;
     border: 0.2vw solid #444444;
 }
-.button:hover {
-    transform: scale(1.05);
+@media (hover: hover) {
+    .button:hover {
+        transform: scale(1.05);
+    }
 }
 .button:active {
     transform: scale(0.95);
@@ -32,22 +34,28 @@
     background-color: #ff2a2a;
     border-color: #880000;
 }
-#btn-multiplier:hover {
-    background-color: #ff5151;
+@media (hover: hover) {
+    #btn-multiplier:hover {
+        background-color: #ff5151;
+    }
 }
 #btn-rebirth {
     background-color: #0066ff;
     border-color: #0033aa;
 }
-#btn-rebirth:hover {
-    background-color: #3385ff;
+@media (hover: hover) {
+    #btn-rebirth:hover {
+        background-color: #3385ff;
+    }
 }
 #btn-superRebirth {
     background-color: #00ccff;
     border-color: #0088cc;
 }
-#btn-superRebirth:hover {
-    background-color: #33ddff;
+@media (hover: hover) {
+    #btn-superRebirth:hover {
+        background-color: #33ddff;
+    }
 }
 #money_amount {
     color: #00b400;

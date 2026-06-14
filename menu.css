@@ -60,10 +60,10 @@ body {
     align-items: center;
     justify-content: center;
 }
-.side-btn:hover, .sub-btn:hover {
-    background-color: #666;
-    border-color: #444;
-    transform: scale(1.05);
+@media (hover: hover) {
+    .side-btn:hover, .sub-btn:hover:hover {
+        transform: scale(1.05);
+    }
 }
 .side-btn:active, .sub-btn:active {
     background-color: #555;

@@ -61,7 +61,12 @@ function round(liczba) {
 }
 //=====(KUPOWANIE PODCZAS TRZYMANIA)=====
 let multiplierInterval = null;
-function startAutoBuyMultiplier() {
+function startAutoBuyMultiplier(e) {
+    if (e) {
+        if (e.type === 'touchstart' && e.cancelable) {
+            e.preventDefault();
+        }
+    }
     if (multiplierInterval !== null) return;
     buyMultiplier();
     multiplierInterval = setInterval(function() {

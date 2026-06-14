@@ -29,9 +29,11 @@
                     <h1 id = "money_amount">Money: 0</h1>
                     <div id = "stats-container">
                         <button id="btn-multiplier" class="button"
-                                onmousedown="startAutoBuyMultiplier()"
+                                onmousedown="startAutoBuyMultiplier(event)"
                                 onmouseup="stopAutoBuyMultiplier()"
-                                onmouseleave="stopAutoBuyMultiplier()">
+                                onmouseleave="stopAutoBuyMultiplier()"
+                                ontouchstart="startAutoBuyMultiplier(event)"
+                                ontouchend="stopAutoBuyMultiplier()">
                             Cost: 100$ <br> Gain: <span id="multiplier_gain">0</span> M
                         </button>
                         <h1 id = "multiplier_amount">Multiplier: 1</h1>
