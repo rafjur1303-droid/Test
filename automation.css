@@ -1,0 +1,58 @@
+.automation-layout-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: stretch;
+    box-sizing: border-box;
+    padding: 1vh 1vw;
+}
+
+.automation-lewa {
+    width: 55vw;
+    min-height: 45vh;
+    margin-left: -2vw;
+    padding: 1.5vh 1.5vw;
+    box-sizing: border-box;
+}
+.automation-prawa {
+    width: 12vw;
+    min-height: 45vh;
+    padding: 1.5vh 1vw;
+    box-sizing: border-box;
+}
+#automation-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vw;
+    align-items: center;
+    margin-top: 2vh;
+}
+.automation-btn {
+    color: #000000;
+    width: 16vw;
+    height: 15vh;
+    font-size: 1.4vw;
+    transition: 0.25s;
+    border-radius: 0.2vw;
+}
+#research-multiplier-info:hover {
+    background-color: #ff2a2a;
+}
+#research-rebirth-info:hover {
+    background-color: #0066ff;
+}
+#research-superRebirth-info:hover {
+    background-color: #00ccff;
+}
+.automation-btn-click{
+    background-color: #555;
+    border: 0.3vw solid #3c3c3c;
+}
+.automation-btn-click:hover{
+    background-color: #777;
+    transform: scale(1.05);
+}
+.automation-btn-click:active{
+    background-color: #555;
+    transform: scale(0.95);
+}

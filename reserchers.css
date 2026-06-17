@@ -1,0 +1,140 @@
+#sub-panel-research-researchers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.lewa-strona {
+    display: flex;
+    flex-direction: column;
+    width: 73%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+.strefa-gora {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.strefa-dol {
+    margin-top: 20px;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.strefa-prawa-bok {
+    width: 24%;
+    margin-left: 3%;
+    flex-shrink: 0;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#stats-researchers {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+#stats-researchers h1 {
+    margin: 0;
+    font-size: 1.8vw;
+    text-align: left;
+    width: 100%;
+    white-space: nowrap;
+}
+#superRebirth-re {
+    white-space: normal !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+#research-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2vw;
+}
+.research {
+    position: relative;
+    width: 100%;
+    height: 16vh;
+    border-radius: 0.2vw;
+    transition: 0.25s;
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: bold;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #000000;
+    cursor: pointer;
+}
+.research:hover {
+    transform: scale(1.05);
+}
+.research:active {
+    transform: scale(0.95);
+}
+.research-max {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 3.5vw;
+    height: 3.5vh;
+    color: black;
+    border-bottom: none;
+    border-right: none;
+    font-size: 1.2vw;
+    font-weight: bold;
+    background: transparent;
+    cursor: pointer;
+}
+#money-research:has(.max-green-research:hover),
+#money-multi-research:has(.max-green-research:hover) { background-color: #49bb00; }
+#multiplier-research:has(.max-red-research:hover),
+#multiplier-multi-research:has(.max-red-research:hover) { background-color: #ff2a2a; }
+#rebirth-research:has(.max-blue-research:hover),
+#rebirth-multi-research:has(.max-blue-research:hover) { background-color: #0270FF; }
+#superRebirth-research:has(.max-lblue-research:hover),
+#superRebirth-multi-research:has(.max-lblue-research:hover) { background-color: #05B8FF; }
+.max-green-research { border-top: 0.2vw solid #2c7500; border-left: 0.2vw solid #2c7500; }
+.max-green-research:hover { background-color: #5ae101; }
+.max-green-research:active { background-color: #49bb00; }
+.max-red-research { border-top: 0.2vw solid #880000; border-left: 0.2vw solid #880000; }
+.max-red-research:hover { background-color: #ff5151; }
+.max-red-research:active { background-color: #ff2a2a; }
+.max-blue-research { border-top: 0.2vw solid #0033aa; border-left: 0.2vw solid #0033aa; }
+.max-blue-research:hover { background-color: #0296ff; }
+.max-blue-research:active { background-color: #0270FF; }
+.max-lblue-research { border-top: 0.2vw solid #0088cc; border-left: 0.2vw solid #0088cc; }
+.max-lblue-research:hover { background-color: #07D5FF; }
+.max-lblue-research:active { background-color: #05B8FF; }
+.research-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+#researchers-amount { font-size: 3.5vw; color: #555555; margin: 0; }
+#research-speed { font-size: 3vw; color: #555555; margin: 5px 0; }
+#speed-bar { font-size: 3vw; color: #000000; margin: 0; }
+#money-speed { color: #49bb00; }
+#multiplier-speed { color: #fd1b1b; }
+#rebirth-speed { color: #3333fd; }
+#superRebirth-speed { color: #05B8FF; }
+#upgrades-speed { color: #555555; }
+#suma-speed { color: #555555; }
+#money-re { color: #00b400; }
+#multiplier-re { color: #fd1b1b; }
+#rebirth-re { color: #3333fd; }
+#superRebirth-re { color: #05B8FF; }
